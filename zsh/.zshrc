@@ -172,4 +172,27 @@ timezsh() {
 }
 
 
+
+# Created by `userpath` on 2020-12-29 07:37:07
+export PATH="$PATH:/Users/aadeshchandra/.local/bin"
+
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+
+autoload -U bashcompinit
+bashcompinit
+
 eval "$(starship init zsh)"
+
+eval "$(register-python-argcomplete pipx)"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
